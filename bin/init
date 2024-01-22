@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "Starting..."
+
+export PATH="/bin"
+
+mount -n -t proc proc /proc
+uname -r
+
+/bug-reproduction
+if [ $? -eq 0 ]; then
+    echo "XXX: OK"
+else
+    echo "XXX: FAIL"
+fi
+
+echo "Shutting down..."
+poweroff -f
+echo "Failed to shut down!"

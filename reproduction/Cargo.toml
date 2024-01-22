@@ -1,0 +1,26 @@
+[package]
+name = "bug-reproduction"
+version = "0.1.0"
+authors = ["Jan Bujak <jan@parity.io>"]
+license = "MIT/Apache-2.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+polkavm-linux-raw = "0.5"
+
+[profile.dev]
+lto = "fat"
+panic = "abort"
+opt-level = 1
+
+[profile.release]
+lto = "fat"
+panic = "abort"
+opt-level = 3
+codegen-units = 1
+debug = false
+strip = "debuginfo"
+
+[workspace]
+resolver = "2"
