@@ -16,6 +16,7 @@ Requires Rust and LLD to be installed.
 ### Running under qemu for a given kernel image
 
 ```
+./prepare.sh
 ./run-for-kernel.sh /path/to/bzImage
 ```
 
